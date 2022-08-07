@@ -1,12 +1,14 @@
 class Solution {
-    public int maxProfit(int[] prices) {
-        int minB = prices[0],maxS = 0;
-        for (int i=0;i<prices.length;i++){
-            if(prices[i]<minB){
-                minB=prices[i];
-            } else if (prices[i] - minB > maxS)
-                maxS = prices[i] - minB;
+   fun maxProfit(prices: IntArray): Int {
+        var minB = prices[0]
+        var max = 0
+
+        for (i in prices.indices){
+            if (prices[i] <minB)
+                minB = prices[i]
+            else if (prices[i] - minB > max)
+                max = prices[i]-minB
         }
-        return maxS;
+        return max
     }
 }
